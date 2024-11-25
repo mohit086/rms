@@ -8,6 +8,7 @@ from models.menu import MenuItem, Menu
 class TestMenuModel(unittest.TestCase):
 
     def test_menu_item_creation(self):
+        # Function to test menu item creation
         item = MenuItem(1, 'Pizza', 'Delicious cheese pizza', 9.99, True)
         self.assertEqual(item.item_id, 1)
         self.assertEqual(item.name, 'Pizza')
@@ -15,6 +16,7 @@ class TestMenuModel(unittest.TestCase):
         self.assertTrue(item.is_available)
 
     def test_menu_add_item(self):
+        # Function to test menu item addition
         menu = Menu()
         item = MenuItem(1, 'Pizza', 'Delicious cheese pizza', 9.99, True)
         menu.add_item(item)
@@ -22,6 +24,7 @@ class TestMenuModel(unittest.TestCase):
         self.assertEqual(menu.items[0].name, 'Pizza')
 
     def test_menu_remove_item(self):
+        # Function to test menu item removal
         menu = Menu()
         item = MenuItem(1, 'Pizza', 'Delicious cheese pizza', 9.99, True)
         menu.add_item(item)
@@ -29,6 +32,7 @@ class TestMenuModel(unittest.TestCase):
         self.assertEqual(len(menu.items), 0)
 
     def test_update_menu_item(self):
+        # Function to test menu item updation
         item = MenuItem(1, 'Pizza', 'Delicious cheese pizza', 9.99, True)
         item.update_item(name='Veg Pizza', price=11.99)
         self.assertEqual(item.name, 'Veg Pizza')
