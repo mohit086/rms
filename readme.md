@@ -53,7 +53,10 @@ A Command-Line Interface (CLI) application for managing restaurant operations, b
 Ensure the following software is installed:
 - **Python 3.8+**
 - **MySQL**
-
+- **MySQL Connector for Python**  
+  Install it using pip:  
+  ```bash
+  pip install mysql-connector-python
 ---
 
 ### 2. Set Up the Database
@@ -82,6 +85,14 @@ Navigate to the `src` directory and start the application:
 ```
 
 Follow the on-screen instructions for login and using the CLI.
+
+  1. **Admin Access**
+     * **Username**: `admin1`
+     * **Password**: `admin123`
+
+  2. **Employee Access**
+     * **Username**: `employee1`
+     * **Password**: `employee123`
 
 ### 4. Run the Unit Tests
 
