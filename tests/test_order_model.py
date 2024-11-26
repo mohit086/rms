@@ -8,29 +8,34 @@ from models.order import OrderItem, Order
 class TestOrderModel(unittest.TestCase):
 
     def test_order_item_creation(self):
+        # Test that an order item can be created
         order_item = OrderItem(1, 2)
         self.assertEqual(order_item.item_id, 1)
         self.assertEqual(order_item.quantity, 2)
 
     def test_order_creation(self):
+        # Test that an order can be created
         order = Order(1, 1, 5, '2024-11-25')
         self.assertEqual(order.order_id, 1)
         self.assertEqual(order.table_no, 5)
         self.assertEqual(order.order_date, '2024-11-25')
 
     def test_add_order_item(self):
+        # Test that an order item can be added to an order
         order = Order(1, 1, 5, '2024-11-25')
         order.add_item(1, 2)
         self.assertEqual(len(order.order_items), 1)
         self.assertEqual(order.order_items[0].item_id, 1)
 
     def test_remove_order_item(self):
+        # Test that an order item can be removed from an order
         order = Order(1, 1, 5, '2024-11-25')
         order.add_item(1, 2)
         order.remove_item(1)
         self.assertEqual(len(order.order_items), 0)
 
     def test_order_to_dict(self):
+        # Test that an order can be converted to a dictionary
         order = Order(1, 1, 5, '2024-11-25')
         order.add_item(1, 2)
         order_dict = order.to_dict()
