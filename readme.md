@@ -26,7 +26,6 @@ A Command-Line Interface (CLI) application for managing restaurant operations, b
 5. **Authentication**:
    - Role-based access for admins and employees.
 
----
 
 ## Design Patterns Used
 
@@ -44,7 +43,6 @@ A Command-Line Interface (CLI) application for managing restaurant operations, b
 - **Singleton Pattern**:
   - The **database connection** is implemented as a Singleton, ensuring a single connection is reused throughout the application.
 
----
 
 ## Steps to Run the Application
 
@@ -53,11 +51,12 @@ A Command-Line Interface (CLI) application for managing restaurant operations, b
 Ensure the following software is installed:
 - **Python 3.8+**
 - **MySQL**
-- **MySQL Connector for Python**  
-  Install it using pip:  
-  ```bash
+- **MySQL Connector for Python**
+
+Install it using pip:  
+```bash
   pip install mysql-connector-python
----
+```
 
 ### 2. Set Up the Database
 
@@ -108,8 +107,8 @@ This will discover and run all the unit test files located in the `tests/` direc
 | Action              | Command                                                       | Directory                  |
 |---------------------|---------------------------------------------------------------|----------------------------|
 | Create Database     | `CREATE DATABASE restaurant;`                                 | MySQL CLI                  |
-| Run `database.sql`  | `mysql -u root -p restaurant < database.sql`                  | `database/`                |
-| Run `dummy_data.sql`| `mysql -u root -p restaurant < dummy_data.sql`                | `database/`                |
+| Set Schema          | `mysql -u root -p restaurant < database.sql`                  | `database/`                |
+| Populate database   | `mysql -u root -p restaurant < dummy_data.sql`                | `database/`                |
 | Run Application     | `python3 main.py`                                             | `src/`                     |
 | Run Tests           | `python3 -m unittest discover -s tests`                       | Project Root (`./`)        |
 
